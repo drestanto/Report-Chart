@@ -13,7 +13,7 @@ class CreateReportsDailyTable extends Migration
      */
     public function up()
     {
-        Schema::table('raports_daily', function (Blueprint $table) {
+        Schema::create('reports_daily', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
             $table->integer('amount');
@@ -28,8 +28,8 @@ class CreateReportsDailyTable extends Migration
      */
     public function down()
     {
-        Schema::table('raports_daily', function (Blueprint $table) {
-            //
+        Schema::table('reports_daily', function (Blueprint $table) {
+            Schema::dropIfExists('password_resets');
         });
     }
 }
