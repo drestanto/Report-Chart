@@ -5,6 +5,8 @@
 </head>
 <body>
 	<h1> Daily Resports </h1>
+
+	{{-- GRAPHS --}}
 	<canvas id="daily-reports" width="600" height="300"></canvas>
 	<script>
 		(function() {
@@ -30,6 +32,13 @@
 			new Chart(ctx).Line(chart); //new Chart(ctx).Bar(chart, {bezierCurve: false});
 		})();
 	</script>
+
+	{{-- LIST --}}
+	<h2> Drill Down </h2>
+	@for ($i = 0; $i < sizeof($dates) ; $i++)
+		<li><strong>{{$dates[$i]}} : </strong>{{$amounts[$i]}}</li>
+	@endfor
+
 </body>
 
 </html>
