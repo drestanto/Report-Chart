@@ -1,2 +1,4 @@
 chartjs.org
+https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js ((This linnk works))
+https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js ((not working. Why??))
 https://cdnjs.com/libraries/Chart.js
