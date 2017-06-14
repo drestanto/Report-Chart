@@ -8,14 +8,22 @@
 	<canvas id="daily-reports" width="600" height="300"></canvas>
 	<script>
 		(function() {
+			var dates = new Array();
+		    <?php foreach($dates as $key => $val){ ?>
+		        dates.push('<?php echo $val; ?>');
+		    <?php } ?>
+			var amounts = new Array();
+		    <?php foreach($amounts as $key => $val){ ?>
+		        amounts.push('<?php echo $val; ?>');
+		    <?php } ?>
 			var ctx = document.getElementById('daily-reports').getContext('2d');
 			var chart = {
-				labels: {{ json_encode($dates) }},
+				labels: dates,
 				datasets: [{
-					data: {{ json_encode($amounts) }}
-					// fillColor : "#f8b1aa"
-					// strokeColor : "#bb574e"
-					// pointColor : "#ba5c3e"
+					data: amounts,
+					// fillColor : "#f8b1aa",
+					// strokeColor : "#bb574e",
+					// pointColor : "#ba5c3e",
 				}]
 			};
 
