@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ReportsController extends Controller
 {
     public function dailyReport() {
-    	return "Daily report";
+    	return view('reports.daily');
     }
 }
