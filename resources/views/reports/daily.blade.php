@@ -5,18 +5,21 @@
 </head>
 <body>
 	<h1> Daily Resports </h1>
-	<canvas id="daily-reports" width="300" height="300"></canvas>
+	<canvas id="daily-reports" width="600" height="300"></canvas>
 	<script>
 		(function() {
 			var ctx = document.getElementById('daily-reports').getContext('2d');
 			var chart = {
-				labels: ['January', 'February', 'March'],
+				labels: {{ json_encode($dates) }},
 				datasets: [{
-					data: [100, 423, 719]
+					data: {{ json_encode($amounts) }}
+					// fillColor : "#f8b1aa"
+					// strokeColor : "#bb574e"
+					// pointColor : "#ba5c3e"
 				}]
 			};
 
-			new Chart(ctx).Line(chart);
+			new Chart(ctx).Line(chart); //new Chart(ctx).Bar(chart, {bezierCurve: false});
 		})();
 	</script>
 </body>

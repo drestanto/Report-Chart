@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class ReportsController extends Controller
 {
     public function dailyReport() {
-    	return view('reports.daily');
+    	$dailyData = \App\DailyReports::all();
+    	$dates = $dailyData->pluck('date');
+    	$amounts = $dailyData->pluck('amount');
+    	return view('reports.daily', compact('dates', 'amounts'));
     }
 }
