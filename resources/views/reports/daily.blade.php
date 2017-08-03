@@ -15,9 +15,10 @@
 		        dates.push('<?php echo $val; ?>');
 		    <?php } ?>
 			var amounts = new Array();
-		    <?php foreach($amounts as $key => $val){ ?>
+		    <?php foreach($amounts as $key => $val){ 
+		    	if ($val!=NULL) {?>
 		        amounts.push('<?php echo $val; ?>');
-		    <?php } ?>
+		    <?php }} ?>
 			var ctx = document.getElementById('daily-reports').getContext('2d');
 			var chart = {
 				labels: dates,
@@ -29,7 +30,7 @@
 				}]
 			};
 
-			new Chart(ctx).Line(chart); //new Chart(ctx).Bar(chart, {bezierCurve: false});
+			new Chart(ctx).Line(chart, {bezierCurve: false}); //new Chart(ctx).Bar(chart, {bezierCurve: false});
 		})();
 	</script>
 
