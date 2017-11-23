@@ -13,5 +13,7 @@ class ReportsController extends Controller
     	$amounts = $dailyData->pluck('amount');
     	// $amounts = [270,290,310,230,370,100,380,470,550,730,610,620];
     	return view('reports.daily', compact('dates', 'amounts'));
+
+    	Tambahan tambahan;
     }
 }
